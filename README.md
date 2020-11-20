@@ -22,7 +22,7 @@ Need to develop a pipeline which can transfer the file (upto 5GB) from s3 to goo
 
 
 ### Runtime metrics of Lambda funtion
-
+The following are the runtimes of lambda function which specify how much time it took for lambda function to run when a file of x MB is uploaded to S3 and Lambda is allocated y MB of memory.  
 <table>
     <tr>
         <th> File Size </th>
