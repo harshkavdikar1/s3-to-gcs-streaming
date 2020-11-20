@@ -12,11 +12,12 @@ Need to develop a pipeline which can transfer the file (upto 5GB) from s3 to goo
 
 
 ### ⚙ How to run it
-1.  run <code> npm install </code>
-2. Replace following parameters in serverless.yml file 
-    * gcsBucket : Destination bucket in google cloud storage
-    * role : IAM role to be associated with lambda function
-    * S3SourceBucket : Source S3 bucket (check [serverless documentation]("https://www.serverless.com/framework/docs/providers/aws/events/s3/") if bucket already exists)</li>
+1. run <code> npm install </code>
+2. Replace following parameters in serverless.yml file.
+    * gcsBucket : Destination bucket in google cloud storage.
+    * role : IAM role to be associated with lambda function.
+    * S3SourceBucket : Source S3 bucket (check [serverless documentation]("https://www.serverless.com/framework/docs/providers/aws/events/s3/") if bucket already exists).
+    * Optional : Replace other parameters like service name, function name, env variables as per requirement. 
 3. run <code>sls deploy</code>
 4. Test the code with <code> sls invoke -f functionName --logs </code>
 
