@@ -1,0 +1,25 @@
+service: s3togcs
+
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  region: us-east-2
+  role: IAM-Role
+
+functions:
+  app:
+    description: AWS Lambda function to transfer file from s3 to google cloud storage on file upload to s3
+    handler: index.handler
+    memorySize: 128
+    timeout: 30
+    environment:
+      GOOGLE_APPLICATION_CREDENTIALS: gcpserviceaccount.json
+      gcsBucket: GoogleStorageTargetBucket
+    events:
+      - s3:
+          bucket: S3SourceBucket
+          event: s3:ObjectCreated:*       
+    https://github.com/harshkavdikar1/s3-to-gcs-streaming

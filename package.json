@@ -1,0 +1,22 @@
+{
+  "name": "s3-to-gcs-streaming",
+  "version": "1.0.0",
+  "description": "AWS Lambda function to transfer file from s3 to google cloud storage by streaming contents of file whenever a file is upload to s3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harshkavdikar1/s3-to-gcs-streaming.git"
+  },
+  "author": "Harsh Kavdikar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harshkavdikar1/s3-to-gcs-streaming/issues"
+  },
+  "homepage": "https://github.com/harshkavdikar1/s3-to-gcs-streaming#readme",
+  "dependencies": {
+    "@google-cloud/storage": "^5.5.0"
+  }
+}
