@@ -18,12 +18,6 @@ exports.handler = (event, context) => {
     console.log("S3 bucket name = ", s3Bucket);
     console.log("File created in S3 = ", blob);
 
-    // Get gcs bucket and target file object in Google Cloud Storage
-    const gcsBucket = storage.bucket(process.env.gcsBucket);
-    const gcsTargetFile = gcsBucket.file(blob);
-
-    console.log("Starting the pipeline to stream " + blob + " from S3 to GCS");
-
     // Get credentials from secret manager
     await getGCPCredentials()
         .then((secret) => {
@@ -38,6 +32,12 @@ exports.handler = (event, context) => {
 
     // Object of Google Cloud Storage
     const storage = new Storage({ credentials: credentials, projectId: process.env.projectId });
+
+    // Get gcs bucket and target file object in Google Cloud Storage
+    const gcsBucket = storage.bucket(process.env.gcsBucket);
+    const gcsTargetFile = gcsBucket.file(blob);
+
+    console.log("Starting the pipeline to stream " + blob + " from S3 to GCS");
 
     // Parameters to connect to s3 bucket
     var s3Params = { Bucket: s3Bucket, Key: blob };
