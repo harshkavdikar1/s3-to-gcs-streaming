@@ -9,6 +9,7 @@ Need to develop a pipeline which can transfer the file (upto 5GB) from s3 to goo
 * Create a destination bucket in Google Cloud Storage
 * Create a service account with write access to Google Cloud Storage
 * Install Serverless (See [references](#References) for how to install)
+* Save private_key and client_email of gcp service account in aws secret manager
 
 
 ### ⚙ How to run it
@@ -17,6 +18,8 @@ Need to develop a pipeline which can transfer the file (upto 5GB) from s3 to goo
     * gcsBucket : Destination bucket in google cloud storage.
     * role : IAM role to be associated with lambda function.
     * S3SourceBucket : Source S3 bucket (check [serverless documentation]("https://www.serverless.com/framework/docs/providers/aws/events/s3/") if bucket already exists).
+    * projectId: Project ID of GCP project
+    * secretName: secret name is aws secret manager used to store service account details
     * Optional : Replace other parameters like service name, function name, env variables as per requirement. 
 3. run <code>sls deploy</code>
 4. Test the code with <code> sls invoke -f functionName --logs </code>

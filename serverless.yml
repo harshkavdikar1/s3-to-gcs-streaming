@@ -16,10 +16,10 @@ functions:
     memorySize: 128
     timeout: 30
     environment:
-      GOOGLE_APPLICATION_CREDENTIALS: gcpserviceaccount.json
       gcsBucket: GoogleStorageTargetBucket
+      projectId: projectIdGCP
+      secretName: secretNameAWS
     events:
       - s3:
           bucket: S3SourceBucket
-          event: s3:ObjectCreated:*       
-    https://github.com/harshkavdikar1/s3-to-gcs-streaming
+          event: s3:ObjectCreated:*
