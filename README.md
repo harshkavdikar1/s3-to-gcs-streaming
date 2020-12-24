@@ -2,8 +2,11 @@
 Data Pipeline to stream data of a file from S3 bucket to Google Cloud Storage using AWS Lambda whenever a file is uploaded to S3
 
 ### Description
-Need to develop a pipeline which can transfer the file (upto 5GB) from s3 to google cloud storage whenever a file is uploaded to the google cloud storage. There are some great tools that can be used but these tools doesn't support transferring of file on upload event in s3 or they are third party tools or they are big data tools which my organization was reluctant to use. Therefore, I developed a streaming application which would download the contents of the file in s3 bucket in chunks depending upon the memory of the lambda function and upload the chunks the to the gcs and continue this process until the file has been completely copied from s3 to google cloud storage. For this purpose stream library of nodejs has been used.
+Need to develop a pipeline which can transfer the file from s3 to google cloud storage whenever a file is uploaded to the google cloud storage. There are some great tools that can be used but these tools doesn't support transferring of file on upload event in s3 or they are third party tools or they are big data tools which my organization was reluctant to use. Therefore, I developed a streaming application which would download the contents of the file in s3 bucket in chunks depending upon the memory of the lambda function and upload the chunks the to the gcs and continue this process until the file has been completely copied from s3 to google cloud storage. For this purpose stream library of nodejs has been used.
 
+### Architecture
+
+![architecture](s3-to-gcs.png)
 
 ### Pre-requisites
 * Create a destination bucket in Google Cloud Storage
